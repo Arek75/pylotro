@@ -1,0 +1,6 @@
+This is the windows build of PyLotro.  If you got this in a zip and are
+wondering how to install it, just extract the archive somewhere on your
+hard drive and run pylotro.exe.
+
+If you get an error about msvcr100.dll, install the Visual Studio 2010
+runtime from http://www.microsoft.com/download/en/details.aspx?id=5555

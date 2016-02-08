@@ -1,0 +1,23 @@
+Using the windows build of PyLotRO on WINE:
+
+pylotro.exe needs to be run from the same wineprefix you installed LotRO (or DDO)
+in. The command to do this from a shortcut is:
+
+  env WINEPREFIX="/home/user/wineprefix/ddo" wine /home/user/pylotro/pylotro.exe
+
+Obviously, edit the value of WINEPREFIX to match the wineprefix you installed
+DDO to, and the path to pylotro.exe to point to where pylotro.exe actually is.
+
+If you get an error about msvcr100.dll, run the following command from a shell:
+
+  $ WINEPREFIX="/home/user/wineprefix/ddo" winetricks vcrun2010
+
+(again, modify the value of WINEPREFIX to match your DDO installation).
+
+Alternatively, if you have a matching Python and PyQT4 installed, you can use
+the native/source version instead - just unpack source.zip and run the pylotro
+script in the source directory.  Note that it will default to whatever python
+runs when you type "python", so if you have both Python 2 and Python 3
+installed (you probably do), you may want to edit the first line to point to
+python3 instead of python.  Due to security issues, I highly recommend using
+Python 3.2 or newer to run PyLotRO, if possible.
