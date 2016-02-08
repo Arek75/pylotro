@@ -1,0 +1,19 @@
+Building the Windows version:
+
+First, you'll need to install py2exe for your version of python.  I don't know if pip
+works for this or not, since I didn't use it, but if it does, great.  If not, just make
+sure you got the right version for your python version.
+
+Now that you have py2exe installed:
+From a command prompt in the current pylotro source directory, run the following command
+in the source folder:
+	C:\Python34\python.exe winbuild.py py2exe
+
+You can use any version of Python from 2.7 to 3.4.  Currently neither PyQT4 nor py2exe
+have been ported to Python 3.5.  I don't recommend using any python version below 3.2
+due to ssl issues.
+
+If you distribute the pre-built pylotro for windows, make sure you let users know that
+they need to install the appropriate Visual C++ runtime libs.  For Python 3.3 and 3.4
+that's the Visual C++ 2010 runtime.  For earlier versions, that's the Visual C++ 2008
+runtime *without* SP1.  Yet another reason to recommend newer versions of Python.
