@@ -8,15 +8,28 @@ Prerequisites:
  * PyQT4 for your version of Python.
  * py2exe for your version of python.
 
-Once you've confirmed that you have the prerequisites installed, From a command
-prompt in the pylotro source directory, run the following command:
+Once you've confirmed that you have the prerequisites installed, there is
+one other thing you should do if you're going to distribute the binaries:
+First clean up your working tree (git clean), then run the following git
+command in your working directory:
+
+	git archive --format zip --output source.zip --prefix source/ windows-build
+
+Then run the following command from a command prompt in the pylotro source
+directory:
 
 	\path\to\python.exe winbuild.py py2exe
 
-When it's done, you'll have a number of files in the dist directory, ready for
-distribution or use.
+When it's done, you should have a usable pylotro.exe in the dist folder.
 
-If you distribute the pre-built pylotro for windows, make sure you let users know that
-they need to install the appropriate Visual C++ runtime libs.  For Python 3.3 and 3.4
-that's the Visual C++ 2010 runtime.  For earlier versions, that's the Visual C++ 2008
-runtime *without* SP1.  Yet another reason to recommend newer versions of Python.
+If you wish to redistribute the binaries, move source.zip into the dist folder,
+then rename the folder to something sane (like pylotro or pylotro-win-0.2.3)
+and zip it up or make an installer.  If you make an installer, I recommend
+including the appropriate Visual Studio runtime library installer as indicated
+below, but with an option to not install it (for wine users).
+
+Finally, if you distribute the pre-built pylotro for windows, make sure you let
+users know that they need to install the appropriate Visual C++ runtime libs.
+README.windows and README.wine already do this for Python 3.3 and 3.4.  For older
+supported versions of python, you'll need to point users to the non-sp1 version
+of the Visual Studio 2008 runtimes instead (winetricks vcrun2008 for wine).
