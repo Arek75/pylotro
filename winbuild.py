@@ -172,6 +172,22 @@ for files in os.listdir('PyLotroLauncher/certificates/'):
 	if os.path.isfile(f1): # skip directories
 		f2 = 'certificates', [f1]
 		dataFiles.append(f2)
+if os.path.isfile("COPYING"):
+	dataFiles.append(("", ["COPYING"]))
+else:
+	print("COPYING not found, skipping")
+if os.path.isfile("README.windows"):
+	dataFiles.append(("", ["README.windows"]))
+else:
+	print("README.windows not found, skipping")
+if os.path.isfile("README.wine"):
+	dataFiles.append(("", ["README.wine"]))
+else:
+	print("README.wine not found, skipping")
+if os.path.isfile("source.zip"):
+	dataFiles.append(("", ["source.zip"]))
+else:
+	print("source.zip not found, skipping")
 
 setup(name = "PyLotROLauncher",
 	version = PyLotROLauncher.Information.Version,
