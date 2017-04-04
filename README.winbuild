@@ -9,11 +9,14 @@ Prerequisites:
  * py2exe for your version of python.
 
 Once you've confirmed that you have the prerequisites installed, there is
-one other thing you should do if you're going to distribute the binaries:
+one other thing you should do if you're working within git and are going
+to distribute the binaries:
 First clean up your working tree (git clean), then run the following git
 command in your working directory:
 
-	git archive --format zip --output source.zip --prefix source/ windows-build
+	git archive --format zip --output source.zip --prefix source/ <branch>
+
+Where <branch> is the name of the branch you're working on.
 
 Then run the following command from a command prompt in the pylotro source
 directory:
